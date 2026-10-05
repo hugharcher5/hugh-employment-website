@@ -21,10 +21,9 @@ export const profile = {
   intro:
     "I study Commerce at UCD and work as an Investment Fund Intern at IBM's pension fund in Dublin. I also build software: AI for hedge fund portfolio managers, valuation models, and my own products under Archer Ventures.",
   email: "archerh2005@gmail.com",
-  linkedin: "",
+  linkedin: "https://www.linkedin.com/in/hugh-archer-9230a5297",
   github: "",
-  seeking:
-    "I'm looking for summer 2027 internships in New York, Chicago, London, Singapore and Hong Kong.",
+  contactNote: "Message me on LinkedIn. I'm always happy to jump on a call.",
 };
 
 export const roles: Role[] = [

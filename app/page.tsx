@@ -114,10 +114,13 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section id="contact" title="Contact">
-          <p className="max-w-[56ch] text-muted">{profile.seeking}</p>
-          <div className="mt-7">
-            <a className={btnPrimary} href={`mailto:${profile.email}`}>{profile.email}</a>
+        <Section id="contact" title="Get in touch">
+          <p className="max-w-[56ch] text-muted">{profile.contactNote}</p>
+          <div className="mt-7 flex flex-wrap gap-2.5">
+            <a className={btnPrimary} href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+              Message me on LinkedIn
+            </a>
+            <a className={btn} href={`mailto:${profile.email}`}>Email</a>
           </div>
         </Section>
       </main>
