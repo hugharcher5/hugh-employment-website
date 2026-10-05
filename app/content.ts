@@ -95,10 +95,12 @@ export const projects: Project[] = [
   },
   {
     kind: "Full-stack",
-    name: "Flag Guesser",
+    name: "GeoGrail",
     blurb:
-      "A geography game with Google sign-in, friends, invites, leaderboards and detailed stats. Fuzzy matching handles misspellings.",
-    tags: ["PostgreSQL", "Supabase", "OAuth"],
+      "A geography game with five modes (flags, borders, globe, capitals and landmarks), plus Google sign-in, friends, leaderboards and detailed stats.",
+    tags: ["Next.js", "Supabase", "OAuth"],
+    href: "https://geograil.vercel.app",
+    linkLabel: "Play →",
   },
   {
     kind: "Tooling",
