@@ -80,13 +80,6 @@ export const projects: Project[] = [
     todo: "To add: strategies tested, key results",
   },
   {
-    kind: "Archer Ventures",
-    name: "The Doomscroll Book",
-    blurb:
-      "Turns your social media feed into a printed 300-page book. The first product from Archer Ventures, the company I set up in September 2026.",
-    tags: ["Next.js", "Supabase"],
-  },
-  {
     kind: "Tooling",
     name: "Screen-to-AI Extensions",
     blurb: "Chrome extensions that capture your screen and send it straight to an AI model.",
@@ -130,6 +123,19 @@ export const skillifySite: Feature = {
   ],
   tags: ["HTML", "CSS", "JavaScript"],
   links: [{ label: "Visit skillify.so", href: "https://skillify.so" }],
+};
+
+export const doomscroll: Feature = {
+  name: "The Doomscroll Book",
+  kind: "Archer Ventures · Pre-launch",
+  image: "/doomscroll-book.webp",
+  imageAlt: "The Doomscroll Book homepage: your algorithm, but it's a book",
+  paragraphs: [
+    "The first product from Archer Ventures, the company I set up in September 2026. You pick the categories you actually watch, and it prints the feed you would have scrolled anyway as a real, bound book. Each post gets a page, with its comments on the facing page.",
+    "I built it on my own: the website, the waitlist and creator sign-up, and a pipeline that pulls public Reddit posts and comment threads, curates them and lays them out as a printable PDF.",
+  ],
+  tags: ["Next.js", "TypeScript", "Supabase", "Tailwind", "Reddit API"],
+  links: [{ label: "Visit the site", href: "https://www.thedoomscrollbook.com" }],
 };
 
 export const geograil: Feature = {
