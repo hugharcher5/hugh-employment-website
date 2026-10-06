@@ -80,13 +80,6 @@ export const projects: Project[] = [
     todo: "To add: strategies tested, key results",
   },
   {
-    kind: "AI · Fintech",
-    name: "Skillify",
-    blurb:
-      "AI decision support for hedge fund portfolio managers. It turns expert interviews into reusable heuristics that stress-test macro and FX trade ideas. Built at Blackkite Ventures.",
-    tags: ["LLMs", "Node.js", "Supabase"],
-  },
-  {
     kind: "Archer Ventures",
     name: "The Doomscroll Book",
     blurb:
@@ -102,10 +95,36 @@ export const projects: Project[] = [
   },
 ];
 
-export const geograil = {
+export type Feature = {
+  name: string;
+  kind: string;
+  image: string;
+  imageAlt: string;
+  paragraphs: string[];
+  tags: string[];
+  links: { label: string; href: string }[];
+};
+
+export const skillify: Feature = {
+  name: "Skillify customer console",
+  kind: "Built at Blackkite Ventures · Live",
+  image: "/skillify-console.webp",
+  imageAlt: "Skillify customer console sign-in page with tabs for account, API keys, usage, credits, help and settings",
+  paragraphs: [
+    "The customer console for Skillify, the AI tool for hedge fund portfolio managers I work on at Blackkite Ventures. I built its Supabase backend: accounts, Google sign-in, one-time verification codes for new sign-ups, issuing and storing API keys, and tracking each customer's credits.",
+    "I also built the routing system behind the API, which runs on two LLMs. One picks which heuristics and skills a request needs and returns the answer through the customer's API key. The other checks and rates each response, flagging weak ones for review so we can improve Skillify's answers.",
+    "The setup instructions in the console are mine too, written so people who aren't technical can get started.",
+  ],
+  tags: ["Supabase", "PostgreSQL", "Google OAuth", "LLM routing", "Node.js"],
+  links: [
+    { label: "Open the console", href: "https://console.skillify.so" },
+    { label: "skillify.so", href: "https://skillify.so" },
+  ],
+};
+
+export const geograil: Feature = {
   name: "GeoGrail",
   kind: "Side project · Live",
-  href: "https://geograil.vercel.app",
   image: "/geograil.webp",
   imageAlt: "GeoGrail title screen: a golden chalice holding a map of the world, surrounded by five game modes",
   paragraphs: [
@@ -113,6 +132,7 @@ export const geograil = {
     "You can sign in with Google, add friends, climb the leaderboards and track your stats. It also lets misspellings through. I started it to teach myself web development and kept building on it.",
   ],
   tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "MapLibre"],
+  links: [{ label: "Play GeoGrail", href: "https://geograil.vercel.app" }],
 };
 
 export const skills: { group: string; items: string[] }[] = [
