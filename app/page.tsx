@@ -1,4 +1,4 @@
-import { geograil, profile, projects, roles, skillify, skills, type Feature } from "./content";
+import { geograil, profile, projects, roles, skillify, skillifySite, skills, type Feature } from "./content";
 
 const wrap = "mx-auto max-w-[880px] px-4 sm:px-6";
 const btn =
@@ -134,7 +134,10 @@ export default function Home() {
         </Section>
 
         <Section id="skillify" title="At work">
-          <FeatureCard feature={skillify} />
+          <div className="flex flex-col gap-5">
+            <FeatureCard feature={skillify} />
+            <FeatureCard feature={skillifySite} />
+          </div>
         </Section>
 
         <Section id="geograil" title="For fun">

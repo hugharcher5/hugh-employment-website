@@ -116,10 +116,20 @@ export const skillify: Feature = {
     "The setup instructions in the console are mine too, written so people who aren't technical can get started.",
   ],
   tags: ["Supabase", "PostgreSQL", "Google OAuth", "LLM routing", "Node.js"],
-  links: [
-    { label: "Open the console", href: "https://console.skillify.so" },
-    { label: "skillify.so", href: "https://skillify.so" },
+  links: [{ label: "Open the console", href: "https://console.skillify.so" }],
+};
+
+export const skillifySite: Feature = {
+  name: "Skillify website",
+  kind: "Blackkite Ventures · Live",
+  image: "/skillify-site.webp",
+  imageAlt: "Skillify homepage: turning expert judgment into validated, reusable AI capability for investment workflows",
+  paragraphs: [
+    "Skillify's public website. It explains what Skillify does, turning expert judgment into validated, reusable AI capability for investment workflows, and lets investment teams book an intro call.",
+    "I worked on the frontend alongside the rest of the team, mainly improving the UI.",
   ],
+  tags: ["HTML", "CSS", "JavaScript"],
+  links: [{ label: "Visit skillify.so", href: "https://skillify.so" }],
 };
 
 export const geograil: Feature = {
