@@ -1,4 +1,4 @@
-import { profile, projects, roles, skills } from "./content";
+import { geograil, profile, projects, roles, skills } from "./content";
 
 const wrap = "mx-auto max-w-[880px] px-4 sm:px-6";
 const btn =
@@ -30,6 +30,7 @@ export default function Home() {
           </a>
           <ul className="flex gap-5 text-sm text-muted">
             <li className="hidden sm:block"><a className="hover:text-text" href="#experience">Experience</a></li>
+            <li className="hidden sm:block"><a className="hover:text-text" href="#geograil">GeoGrail</a></li>
             <li><a className="hover:text-text" href="#projects">Projects</a></li>
             <li className="hidden sm:block"><a className="hover:text-text" href="#skills">Skills</a></li>
             <li><a className="hover:text-text" href="#contact">Contact</a></li>
@@ -71,6 +72,45 @@ export default function Home() {
               </div>
             </article>
           ))}
+        </Section>
+
+        <Section id="geograil" title="For fun">
+          <a
+            href={geograil.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group grid items-center gap-4 rounded-2xl border border-line bg-surface p-4 transition-[border-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:border-muted hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 md:grid-cols-[1.15fr_1fr] md:gap-7"
+          >
+            <div className="aspect-[16/10] overflow-hidden rounded-xl bg-[#17154A]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={geograil.image}
+                alt={geograil.imageAlt}
+                width={1200}
+                height={750}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none"
+              />
+            </div>
+            <div className="flex flex-col gap-3 px-1 pb-2 md:py-2 md:pr-3 md:pl-0">
+              <span className="text-xs font-semibold tracking-wider text-accent uppercase">{geograil.kind}</span>
+              <h3 className="font-serif text-[1.6rem] leading-tight font-medium">{geograil.name}</h3>
+              {geograil.paragraphs.map((p) => (
+                <p key={p} className="text-[0.95rem] text-muted">{p}</p>
+              ))}
+              <div className="flex flex-wrap gap-1.5 pt-0.5">
+                {geograil.tags.map((t) => (
+                  <span key={t} className="rounded-md bg-tag px-2 py-0.5 text-xs text-muted">{t}</span>
+                ))}
+              </div>
+              <span className={`${btnPrimary} mt-1 gap-2 self-start`}>
+                Play GeoGrail
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M7 17L17 7M8 7h9v9" />
+                </svg>
+              </span>
+            </div>
+          </a>
         </Section>
 
         <Section id="projects" title="Projects">

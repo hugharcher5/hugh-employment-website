@@ -94,15 +94,6 @@ export const projects: Project[] = [
     tags: ["Next.js", "Supabase"],
   },
   {
-    kind: "Full-stack",
-    name: "GeoGrail",
-    blurb:
-      "A geography game with five modes (flags, borders, globe, capitals and landmarks), plus Google sign-in, friends, leaderboards and detailed stats.",
-    tags: ["Next.js", "Supabase", "OAuth"],
-    href: "https://geograil.vercel.app",
-    linkLabel: "Play →",
-  },
-  {
     kind: "Tooling",
     name: "Screen-to-AI Extensions",
     blurb: "Chrome extensions that capture your screen and send it straight to an AI model.",
@@ -110,6 +101,19 @@ export const projects: Project[] = [
     todo: "To add: link, what it solves",
   },
 ];
+
+export const geograil = {
+  name: "GeoGrail",
+  kind: "Side project · Live",
+  href: "https://geograil.vercel.app",
+  image: "/geograil.webp",
+  imageAlt: "GeoGrail title screen: a golden chalice holding a map of the world, surrounded by five game modes",
+  paragraphs: [
+    "A geography game I built for fun while learning to code. There are five ways to play: name the flag, guess a country from its border, find it on a 3D globe, name the capital, and pin famous landmarks.",
+    "You can sign in with Google, add friends, climb the leaderboards and track your stats. It also lets misspellings through. I started it to teach myself web development and kept building on it.",
+  ],
+  tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "MapLibre"],
+};
 
 export const skills: { group: string; items: string[] }[] = [
   {
