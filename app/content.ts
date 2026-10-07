@@ -79,13 +79,6 @@ export const projects: Project[] = [
     tags: ["Python", "pandas"],
     todo: "To add: strategies tested, key results",
   },
-  {
-    kind: "Tooling",
-    name: "Screen-to-AI Extensions",
-    blurb: "Chrome extensions that capture your screen and send it straight to an AI model.",
-    tags: ["JavaScript", "Chrome"],
-    todo: "To add: link, what it solves",
-  },
 ];
 
 export type Feature = {
@@ -163,6 +156,25 @@ export const geograil: Feature = {
   tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "MapLibre"],
   links: [{ label: "Play GeoGrail", href: "https://geograil.vercel.app" }],
 };
+
+export type Tool = {
+  name: string;
+  blurb: string;
+  tags: string[];
+  href: string;
+  linkLabel: string;
+};
+
+export const tools: Tool[] = [
+  {
+    name: "Screen Capture to PDF",
+    blurb:
+      "A Chrome extension I use every day. Press Ctrl+Shift+C and it saves the whole page you're on as a PDF in Downloads, ready to hand to an AI model. Handy when I'm using AI to work through websites.",
+    tags: ["Chrome extension", "JavaScript"],
+    href: "https://github.com/hugharcher5/Screen-Grab-PDF",
+    linkLabel: "View on GitHub",
+  },
+];
 
 export const skills: { group: string; items: string[] }[] = [
   {
