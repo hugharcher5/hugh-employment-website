@@ -78,11 +78,23 @@ function FeatureCard({ feature: f }: { feature: Feature }) {
         {f.paragraphs.map((p) => (
           <p key={p} className="text-[0.95rem] text-muted">{p}</p>
         ))}
-        <figure className="flex flex-col gap-1.5">
-          <figcaption className="text-xs text-muted">{f.audio.label}</figcaption>
-          <audio controls preload="none" src={f.audio.src} className="w-full">
-            <a href={f.audio.src}>Download the sample briefing</a>
-          </audio>
+        <figure className="flex items-center gap-4">
+          <span className="flex h-16 w-14 flex-none items-center justify-center" aria-hidden>
+            <svg viewBox="0 0 56 64" className="h-16 w-14">
+              <path d="M6 2h30l14 14v44a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" className="fill-tag stroke-line" strokeWidth="2" />
+              <path d="M36 2v12a2 2 0 0 0 2 2h12" className="fill-none stroke-line" strokeWidth="2" />
+              <g className="stroke-accent" strokeWidth="3" strokeLinecap="round">
+                <path d="M14 38v4M20 33v14M26 28v24M32 34v12M38 30v20M44 37v6" />
+              </g>
+              <text x="28" y="22" textAnchor="middle" className="fill-muted" fontSize="8" fontWeight="600">MP3</text>
+            </svg>
+          </span>
+          <div className="flex min-w-0 flex-1 flex-col gap-1.5">
+            <figcaption className="text-xs text-muted">{f.audio.label}</figcaption>
+            <audio controls preload="none" src={f.audio.src} className="w-full">
+              <a href={f.audio.src}>Download the sample briefing</a>
+            </audio>
+          </div>
         </figure>
         <div className="flex flex-wrap items-center gap-1.5 pt-1">
           {f.tags.map((t) => (

@@ -184,8 +184,8 @@ export const tools: Feature[] = [
     name: "Morning Brief",
     kind: "Personal tool · Open source",
     paragraphs: [
-      "A custom news briefing that landed in my inbox every morning as a 10 to 15 minute voice note, which I listened to on the way to work. It pulls the day's headlines and market moves from free feeds, has Claude write them up like a radio presenter, voices it with ElevenLabs and emails it over. The feed is fully customisable: markets, the economy, AI, US, Europe, Ireland and Asia.",
-      "I ran it daily for a few months. Each run cost about 30 cents, so it's now manual-only and anyone can run it with their own keys.",
+      "A custom news report that was emailed to me every morning as a 10 to 15 minute voice note, which I listened to on the way to work. It pulls the day's headlines and market moves from free feeds, has Claude write them up like a radio presenter and voices it with ElevenLabs. I choose what goes in: markets, the economy, AI, US, Europe, Ireland and Asia.",
+      "Each run costs about 30 cents, so it's now manual-only. Anyone can run it with their own keys.",
     ],
     audio: { src: "/morning-brief-sample.mp3", label: "Sample briefing, 7 October 2026 (about 11 minutes)" },
     tags: ["Python", "Claude API", "ElevenLabs", "GitHub Actions"],
