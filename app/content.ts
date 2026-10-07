@@ -169,7 +169,7 @@ export const tools: Tool[] = [
   {
     name: "Screen Capture to PDF",
     blurb:
-      "A Chrome extension I use every day, and a few friends now use it too. Press Ctrl+Shift+C and it saves the whole page you're on as a PDF in Downloads, ready to hand to an AI model. Handy when I'm using AI to work through websites.",
+      "A Chrome extension I use every day, and a couple of friends use it too. One keyboard shortcut saves the whole page you're on as a PDF in Downloads, ready to hand to an AI model. Handy when I'm using AI to work through websites, though some sites print badly, so it's worth checking the PDF.",
     tags: ["Chrome extension", "JavaScript"],
     href: "https://github.com/hugharcher5/Screen-Grab-PDF",
     linkLabel: "View on GitHub",
