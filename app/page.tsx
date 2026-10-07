@@ -1,4 +1,4 @@
-import { doomscroll, geograil, profile, projects, roles, skillify, skillifySite, skills, type Feature } from "./content";
+import { archerVentures, doomscroll, geograil, profile, projects, roles, skillify, skillifySite, skills, type Feature } from "./content";
 
 const wrap = "mx-auto max-w-[880px] px-4 sm:px-6";
 const btn =
@@ -89,7 +89,7 @@ export default function Home() {
           <ul className="flex gap-5 text-sm text-muted">
             <li className="hidden sm:block"><a className="hover:text-text" href="#experience">Experience</a></li>
             <li className="hidden lg:block"><a className="hover:text-text" href="#skillify">Skillify</a></li>
-            <li className="hidden lg:block"><a className="hover:text-text" href="#doomscroll">Doomscroll</a></li>
+            <li className="hidden lg:block"><a className="hover:text-text" href="#doomscroll">My company</a></li>
             <li className="hidden lg:block"><a className="hover:text-text" href="#geograil">GeoGrail</a></li>
             <li><a className="hover:text-text" href="#projects">Projects</a></li>
             <li className="hidden sm:block"><a className="hover:text-text" href="#skills">Skills</a></li>
@@ -142,7 +142,10 @@ export default function Home() {
         </Section>
 
         <Section id="doomscroll" title="My company">
-          <FeatureCard feature={doomscroll} />
+          <div className="flex flex-col gap-5">
+            <FeatureCard feature={archerVentures} />
+            <FeatureCard feature={doomscroll} />
+          </div>
         </Section>
 
         <Section id="geograil" title="For fun">

@@ -125,13 +125,26 @@ export const skillifySite: Feature = {
   links: [{ label: "Visit skillify.so", href: "https://skillify.so" }],
 };
 
+export const archerVentures: Feature = {
+  name: "Archer Ventures",
+  kind: "Irish limited company · Live",
+  image: "/archer-ventures.webp",
+  imageAlt: "Archer Ventures homepage with the AV monogram: we build and run consumer products on the internet",
+  paragraphs: [
+    "Archer Ventures Limited is the Irish company I set up in September 2026 to build and run my own consumer products. I own it outright and handled its registration with the CRO, Revenue and the beneficial ownership register myself.",
+    "I built the company website myself: plain HTML and CSS with no cookies or tracking, and full privacy and terms pages written for Irish company and GDPR requirements.",
+  ],
+  tags: ["HTML", "CSS", "GDPR", "Company admin"],
+  links: [{ label: "Visit the site", href: "https://archer-ventures.vercel.app" }],
+};
+
 export const doomscroll: Feature = {
   name: "The Doomscroll Book",
   kind: "Archer Ventures · Pre-launch",
   image: "/doomscroll-book.webp",
   imageAlt: "The Doomscroll Book homepage: your algorithm, but it's a book",
   paragraphs: [
-    "The first product from Archer Ventures, the company I set up in September 2026. You pick the categories you actually watch, and it prints the feed you would have scrolled anyway as a real, bound book. Each post gets a page, with its comments on the facing page.",
+    "The first product from Archer Ventures. You pick the categories you actually watch, and it prints the feed you would have scrolled anyway as a real, bound book. Each post gets a page, with its comments on the facing page.",
     "I built it on my own: the website, the waitlist and creator sign-up, and a pipeline that pulls public Reddit posts and comment threads, curates them and lays them out as a printable PDF.",
   ],
   tags: ["Next.js", "TypeScript", "Supabase", "Tailwind", "Reddit API"],
