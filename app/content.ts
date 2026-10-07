@@ -182,7 +182,7 @@ export const tools: Feature[] = [
     name: "Claude Code workflows",
     kind: "Personal kit · Open source",
     paragraphs: [
-      "My own setup for Claude Code that I use across every project to get work done faster. Twelve features, built once and reused everywhere:",
+      "My own setup for Claude Code that I use across every project to get work done faster. Eleven always-on behaviours, built once and reused everywhere, plus a companion skill for Claude Desktop:",
     ],
     features: [
       "75-word replies, enforced by a hook",
@@ -196,7 +196,6 @@ export const tools: Feature[] = [
       "Humanizer for AI-sounding text",
       "Courtroom mode: four sub-agents debate big decisions",
       "Sonnet/Opus model routing",
-      "Claude Desktop companion skill",
     ],
     tags: ["Claude Code", "Python", "Hooks", "Agents"],
     links: [{ label: "View on GitHub", href: "https://github.com/hugharcher5/claude-code-workflow" }],
