@@ -145,9 +145,9 @@ export const doomscroll: Feature = {
   imageAlt: "The Doomscroll Book homepage: your algorithm, but it's a book",
   paragraphs: [
     "The first product from Archer Ventures. You pick the categories you actually watch, and it prints the feed you would have scrolled anyway as a real, bound book. Each post gets a page, with its comments on the facing page.",
-    "I built it on my own: the website, the waitlist and creator sign-up, and a pipeline that pulls public Reddit posts and comment threads, curates them and lays them out as a printable PDF.",
+    "I built it on my own: the website, the waitlist and creator sign-up, and a pipeline that pulls public posts and comment threads, curates them and lays them out as a printable PDF.",
   ],
-  tags: ["Next.js", "TypeScript", "Supabase", "Tailwind", "Reddit API"],
+  tags: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
   links: [{ label: "Visit the site", href: "https://www.thedoomscrollbook.com" }],
 };
 
