@@ -68,6 +68,34 @@ function FeatureCard({ feature: f }: { feature: Feature }) {
       ))}
     </ul>
   );
+  if (!f.image && f.audio) {
+    return (
+      <div className="flex flex-col gap-3 rounded-xl border border-line bg-surface p-5 transition-colors hover:border-muted">
+        <span className="text-xs font-semibold tracking-wider text-accent uppercase">{f.kind}</span>
+        <h3 className="font-serif text-[1.3rem] leading-tight font-medium">
+          <a href={f.links[0].href} {...ext} className="hover:underline">{f.name}</a>
+        </h3>
+        {f.paragraphs.map((p) => (
+          <p key={p} className="text-[0.95rem] text-muted">{p}</p>
+        ))}
+        <figure className="flex flex-col gap-1.5">
+          <figcaption className="text-xs text-muted">{f.audio.label}</figcaption>
+          <audio controls preload="none" src={f.audio.src} className="w-full">
+            <a href={f.audio.src}>Download the sample briefing</a>
+          </audio>
+        </figure>
+        <div className="flex flex-wrap items-center gap-1.5 pt-1">
+          {f.tags.map((t) => (
+            <span key={t} className="rounded-md bg-tag px-2 py-0.5 text-xs text-muted">{t}</span>
+          ))}
+          <a href={f.links[0].href} {...ext} className="ml-auto inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline">
+            {f.links[0].label}
+            {arrow}
+          </a>
+        </div>
+      </div>
+    );
+  }
   if (!f.image) {
     return (
       <a href={f.links[0].href} {...ext} className="group flex flex-col gap-3 rounded-xl border border-line bg-surface p-5 transition-colors hover:border-muted">
