@@ -84,9 +84,11 @@ export const projects: Project[] = [
 export type Feature = {
   name: string;
   kind: string;
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
   paragraphs: string[];
+  /** Short bullet list shown under the text (compact cards) */
+  features?: string[];
   tags: string[];
   links: { label: string; href: string }[];
   /** Where the screenshot links to, if not the first link */
@@ -175,6 +177,29 @@ export const tools: Feature[] = [
       { label: "View on GitHub", href: "https://github.com/hugharcher5/Screen-Grab-PDF" },
       { label: "Example PDF", href: "/screen-capture-example.pdf" },
     ],
+  },
+  {
+    name: "Claude Code workflows",
+    kind: "Personal kit · Open source",
+    paragraphs: [
+      "My own setup for Claude Code that I use across every project to get work done faster. Twelve features, built once and reused everywhere:",
+    ],
+    features: [
+      "75-word replies, enforced by a hook",
+      "Plan-first gate before any code edits",
+      "Reviewed memory compiler",
+      "Memory lint for links and secrets",
+      "Learns from my corrections",
+      "Sources shown only on request",
+      "Safe API key installer",
+      "UI/UX Pro Max design library",
+      "Humanizer for AI-sounding text",
+      "Courtroom mode: four sub-agents debate big decisions",
+      "Sonnet/Opus model routing",
+      "Claude Desktop companion skill",
+    ],
+    tags: ["Claude Code", "Python", "Hooks", "Agents"],
+    links: [{ label: "View on GitHub", href: "https://github.com/hugharcher5/claude-code-workflow" }],
   },
 ];
 

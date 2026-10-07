@@ -30,7 +30,7 @@ function FeatureCard({ feature: f }: { feature: Feature }) {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={f.image}
-        alt={f.imageAlt}
+        alt={f.imageAlt ?? ""}
         width={1200}
         height={750}
         loading="lazy"
@@ -61,6 +61,34 @@ function FeatureCard({ feature: f }: { feature: Feature }) {
       </div>
     </div>
   );
+  const featureList = f.features && (
+    <ul className="grid gap-x-5 gap-y-1 text-sm text-muted sm:grid-cols-2">
+      {f.features.map((x) => (
+        <li key={x} className="flex gap-2"><span className="text-accent" aria-hidden>·</span>{x}</li>
+      ))}
+    </ul>
+  );
+  if (!f.image) {
+    return (
+      <a href={f.links[0].href} {...ext} className="group flex flex-col gap-3 rounded-xl border border-line bg-surface p-5 transition-colors hover:border-muted">
+        <span className="text-xs font-semibold tracking-wider text-accent uppercase">{f.kind}</span>
+        <h3 className="font-serif text-[1.3rem] leading-tight font-medium">{f.name}</h3>
+        {f.paragraphs.map((p) => (
+          <p key={p} className="text-[0.95rem] text-muted">{p}</p>
+        ))}
+        {featureList}
+        <div className="flex flex-wrap items-center gap-1.5 pt-1">
+          {f.tags.map((t) => (
+            <span key={t} className="rounded-md bg-tag px-2 py-0.5 text-xs text-muted">{t}</span>
+          ))}
+          <span className="ml-auto inline-flex items-center gap-1 text-sm font-medium text-accent group-hover:underline">
+            {f.links[0].label}
+            {arrow}
+          </span>
+        </div>
+      </a>
+    );
+  }
   const card =
     "group grid items-start gap-4 rounded-2xl border border-line bg-surface p-4 transition-[border-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:border-muted hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 md:grid-cols-[1.15fr_1fr] md:gap-7";
   return single ? (
