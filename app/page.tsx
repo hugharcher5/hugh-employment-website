@@ -23,7 +23,7 @@ const arrow = (
 
 /** Large screenshot card. One link: the whole card is clickable. Several: the image opens the first. */
 function FeatureCard({ feature: f }: { feature: Feature }) {
-  const single = f.links.length === 1;
+  const single = f.links.length === 1 && !f.imageHref;
   const ext = { target: "_blank", rel: "noopener noreferrer" };
   const shot = (
     <div className="aspect-[16/10] overflow-hidden rounded-xl bg-tag">
@@ -67,7 +67,7 @@ function FeatureCard({ feature: f }: { feature: Feature }) {
     <a href={f.links[0].href} {...ext} className={card}>{shot}{body}</a>
   ) : (
     <div className={card}>
-      <a href={f.links[0].href} {...ext} aria-label={`${f.links[0].label}: ${f.name}`}>{shot}</a>
+      <a href={f.imageHref ?? f.links[0].href} {...ext} aria-label={f.imageHref ? `Open the example: ${f.name}` : `${f.links[0].label}: ${f.name}`}>{shot}</a>
       {body}
     </div>
   );
@@ -153,33 +153,9 @@ export default function Home() {
         </Section>
 
         <Section id="tools" title="Daily tools">
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="flex flex-col gap-5">
             {tools.map((t) => (
-              <div
-                key={t.name}
-                className="flex flex-col gap-2 rounded-xl border border-line bg-surface p-5 transition-colors hover:border-muted"
-              >
-                <h3 className="font-serif text-[1.2rem] leading-tight font-medium">
-                  <a href={t.href} target="_blank" rel="noopener noreferrer" className="hover:underline">{t.name}</a>
-                </h3>
-                <p className="text-[0.95rem] text-muted">{t.blurb}</p>
-                <div className="mt-auto flex flex-wrap items-center gap-1.5 pt-1.5">
-                  {t.tags.map((tag) => (
-                    <span key={tag} className="rounded-md bg-tag px-2 py-0.5 text-xs text-muted">{tag}</span>
-                  ))}
-                  <span className="ml-auto flex items-center gap-4">
-                    {t.example && (
-                      <a href={t.example.href} target="_blank" rel="noopener noreferrer" className="text-sm text-muted hover:text-text hover:underline">
-                        {t.example.label}
-                      </a>
-                    )}
-                    <a href={t.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline">
-                      {t.linkLabel}
-                      {arrow}
-                    </a>
-                  </span>
-                </div>
-              </div>
+              <FeatureCard key={t.name} feature={t} />
             ))}
           </div>
         </Section>

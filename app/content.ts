@@ -89,6 +89,8 @@ export type Feature = {
   paragraphs: string[];
   tags: string[];
   links: { label: string; href: string }[];
+  /** Where the screenshot links to, if not the first link */
+  imageHref?: string;
 };
 
 export const skillify: Feature = {
@@ -157,24 +159,22 @@ export const geograil: Feature = {
   links: [{ label: "Play GeoGrail", href: "https://geograil.vercel.app" }],
 };
 
-export type Tool = {
-  name: string;
-  blurb: string;
-  tags: string[];
-  href: string;
-  linkLabel: string;
-  example?: { label: string; href: string };
-};
-
-export const tools: Tool[] = [
+export const tools: Feature[] = [
   {
     name: "Screen Capture to PDF",
-    blurb:
-      "A Chrome extension I use every day, and a couple of friends use it too. One keyboard shortcut saves the whole page you're on as a PDF in Downloads, ready to hand to an AI model. Handy when I'm using AI to work through websites, though some sites print badly, so it's worth checking the PDF.",
+    kind: "Chrome extension · Daily use",
+    image: "/screen-capture-example.webp",
+    imageAlt: "First page of the PDF the extension saved from Wikipedia's Golf article",
+    imageHref: "/screen-capture-example.pdf",
+    paragraphs: [
+      "A Chrome extension I use every day, and a couple of friends use it too. One keyboard shortcut saves the whole page you're on as a PDF in your Downloads folder, ready to hand to an AI model. It's handy when I'm using AI to work through websites.",
+      "The example pictured took one step: I opened Wikipedia's Golf article and pressed Ctrl+Shift+C. The full 28-page PDF was in my Downloads folder straight away. Some sites print less cleanly, so it's worth checking the PDF.",
+    ],
     tags: ["Chrome extension", "JavaScript"],
-    href: "https://github.com/hugharcher5/Screen-Grab-PDF",
-    linkLabel: "View on GitHub",
-    example: { label: "Example PDF", href: "/screen-capture-example.pdf" },
+    links: [
+      { label: "View on GitHub", href: "https://github.com/hugharcher5/Screen-Grab-PDF" },
+      { label: "Example PDF", href: "/screen-capture-example.pdf" },
+    ],
   },
 ];
 
