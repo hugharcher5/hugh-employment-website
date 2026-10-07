@@ -185,7 +185,7 @@ export const tools: Feature[] = [
     kind: "Personal tool · Open source",
     paragraphs: [
       "A custom news report that was emailed to me every morning as a 10 to 15 minute voice note, which I listened to on the way to work. It pulls the day's headlines and market moves from free feeds, has Claude write them up like a radio presenter and voices it with ElevenLabs. I choose what goes in: markets, the economy, AI, US, Europe, Ireland and Asia.",
-      "Each run costs about 30 cents, so it's now manual-only. Anyone can run it with their own keys.",
+      "The sample below is from 7 October: a cautious day for markets, rising inflation fears, AI as both the big hope and the big risk, Boots' £7bn sale and the fallout from Ireland's Budget 2027.",
     ],
     audio: { src: "/morning-brief-sample.mp3", label: "Sample briefing, 7 October 2026 (about 11 minutes)" },
     tags: ["Python", "Claude API", "ElevenLabs", "GitHub Actions"],
