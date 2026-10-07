@@ -163,6 +163,7 @@ export type Tool = {
   tags: string[];
   href: string;
   linkLabel: string;
+  example?: { label: string; href: string };
 };
 
 export const tools: Tool[] = [
@@ -173,6 +174,7 @@ export const tools: Tool[] = [
     tags: ["Chrome extension", "JavaScript"],
     href: "https://github.com/hugharcher5/Screen-Grab-PDF",
     linkLabel: "View on GitHub",
+    example: { label: "Example PDF", href: "/screen-capture-example.pdf" },
   },
 ];
 
