@@ -1,4 +1,4 @@
-import { archerVentures, doomscroll, geograil, profile, projects, roles, skillify, skillifySite, skills, tools, type Feature } from "./content";
+import { archerCapital, archerVentures, doomscroll, geograil, profile, projects, roles, skillify, skillifySite, skills, tools, type Feature } from "./content";
 
 const wrap = "mx-auto max-w-[880px] px-4 sm:px-6";
 const btn =
@@ -229,6 +229,9 @@ export default function Home() {
         </Section>
 
         <Section id="projects" title="Projects">
+          <div className="mb-5">
+            <FeatureCard feature={archerCapital} />
+          </div>
           <div className="grid gap-4 md:grid-cols-2">
             {projects.map((p) => (
               <article

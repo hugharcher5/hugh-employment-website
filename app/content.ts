@@ -64,14 +64,6 @@ export const roles: Role[] = [
 
 export const projects: Project[] = [
   {
-    kind: "Valuation",
-    name: "Monte Carlo DCF Calculator",
-    blurb:
-      "A discounted cash flow model that runs thousands of scenarios instead of one estimate, with correlated inputs and Brownian motion for currency paths.",
-    tags: ["Python", "NumPy", "Monte Carlo"],
-    todo: "To add: screenshot, GitHub link",
-  },
-  {
     kind: "Quant",
     name: "Strategy Backtester",
     blurb:
@@ -135,6 +127,20 @@ export const archerVentures: Feature = {
   ],
   tags: ["HTML", "CSS", "GDPR", "Company admin"],
   links: [{ label: "Visit the site", href: "https://archer-ventures.vercel.app" }],
+};
+
+export const archerCapital: Feature = {
+  name: "Archer Capital: Monte Carlo DCF",
+  kind: "Valuation tool · Open source",
+  image: "/archer-capital.webp",
+  imageAlt: "Archer Capital valuing Microsoft: current price, P50 and P10 to P90 range, and the distribution of 10,000 simulated intrinsic values",
+  paragraphs: [
+    "Type in a ticker and it values the company 10,000 times instead of once, giving a full distribution of intrinsic value per share and the probability the stock is undervalued.",
+    "Revenue growth, margins, WACC and terminal growth move together through a correlation matrix, applied with a copula so each keeps its own PERT distribution, with fatter t-distribution tails for volatile firms. Foreign-currency companies get an exchange rate driven by geometric Brownian motion in every simulation.",
+    "It pulls from SEC EDGAR, FMP and Yahoo. Genuine disagreement between sources widens the distribution's tails, while differences that are only definitions, like whether leases count as debt, don't, so accounting noise isn't mistaken for risk.",
+  ],
+  tags: ["Python", "NumPy", "SciPy", "Streamlit", "SEC EDGAR"],
+  links: [{ label: "View on GitHub", href: "https://github.com/hugharcher5/Archer-Capital" }],
 };
 
 export const doomscroll: Feature = {
