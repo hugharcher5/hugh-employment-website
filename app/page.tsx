@@ -105,6 +105,7 @@ function FeatureCard({ feature: f }: { feature: Feature }) {
             {arrow}
           </a>
         </div>
+        {f.sources && <p className="border-t border-line pt-3 text-xs text-muted">Sources: {f.sources}</p>}
       </div>
     );
   }

@@ -79,6 +79,8 @@ export type Feature = {
   imageHref?: string;
   /** Audio sample with a built-in player (compact cards) */
   audio?: { src: string; label: string };
+  /** Where the data comes from, shown in small print at the bottom (compact cards) */
+  sources?: string;
 };
 
 export const skillify: Feature = {
@@ -182,9 +184,11 @@ export const tools: Feature[] = [
     name: "Morning Brief",
     kind: "Personal tool · Open source",
     paragraphs: [
-      "A custom briefing emailed to me every morning as a voice note, which I listen to on the way to work. It pulls live data on US and Swiss 10-year yields, SOFR, €STR, the main US, global and European indices, gold and EUR/USD, and sizes each move against the past year: quiet moves get one line, anything over 1.5 standard deviations gets an explanation. Then it covers what's priced for the next Fed and ECB decisions, any key data releases and the day's headlines. Claude writes the script and ElevenLabs voices it.",
+      "A custom briefing emailed to me every morning as a voice note, which I listen to on the way to work. It pulls live data on US and Swiss 10-year yields, SOFR, €STR, the main US, global and European indices, gold and EUR/USD, and sizes each move against the past year: quiet moves get one line, anything over 1.5 standard deviations gets an explanation. Then it covers what's priced for the next Fed and ECB decisions and any key data releases, followed by the news I've chosen to hear about: markets and business, the US, Europe, Ireland in more detail, and AI and new software. Claude writes the script and ElevenLabs voices it.",
       "The sample below is from 10 October: Friday's closes, a December Fed hike creeping into the price, Ireland's EU budget proposal, Wednesday's public sector strike and an open-source tool that lets AI agents reverse-engineer any program.",
     ],
+    sources:
+      "Market data: CNBC, the New York Fed (SOFR), the ECB (€STR) and fed funds futures via Yahoo Finance. Data releases: BLS and BEA. News: CNBC, the FT, BBC, NPR, Politico Europe, Euronews, RTÉ, The Irish Times, the Irish Independent, TechCrunch, The Verge, Ars Technica, MIT Technology Review and Hacker News.",
     audio: { src: "/morning-brief-sample.mp3", label: "Sample briefing, 10 October 2026 (about 11 minutes)" },
     tags: ["Python", "Claude API", "ElevenLabs", "GitHub Actions"],
     links: [{ label: "View on GitHub", href: "https://github.com/hugharcher5/morning-brief" }],
