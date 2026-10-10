@@ -62,16 +62,8 @@ export const roles: Role[] = [
   },
 ];
 
-export const projects: Project[] = [
-  {
-    kind: "Quant",
-    name: "Strategy Backtester",
-    blurb:
-      "Tested a range of systematic trading strategies on historical data and compared risk-adjusted returns.",
-    tags: ["Python", "pandas"],
-    todo: "To add: strategies tested, key results",
-  },
-];
+// Strategy Backtester hidden until the strategies are reviewed
+export const projects: Project[] = [];
 
 export type Feature = {
   name: string;
@@ -140,7 +132,7 @@ export const archerCapital: Feature = {
     "It pulls from SEC EDGAR, FMP and Yahoo. Genuine disagreement between sources widens the distribution's tails, while differences that are only definitions, like whether leases count as debt, don't, so accounting noise isn't mistaken for risk.",
   ],
   tags: ["Python", "NumPy", "SciPy", "Streamlit", "SEC EDGAR"],
-  links: [{ label: "View on GitHub", href: "https://github.com/hugharcher5/Archer-Capital" }],
+  links: [{ label: "View on GitHub", href: "https://github.com/hugharcher5/Monte-Carlo-DCF" }],
 };
 
 export const doomscroll: Feature = {
@@ -190,10 +182,10 @@ export const tools: Feature[] = [
     name: "Morning Brief",
     kind: "Personal tool · Open source",
     paragraphs: [
-      "A custom news report that was emailed to me every morning as a 10 to 15 minute voice note, which I listened to on the way to work. It pulls the day's headlines and market moves from free feeds, has Claude write them up like a radio presenter and voices it with ElevenLabs. I choose what goes in: markets, the economy, AI, US, Europe, Ireland and Asia.",
-      "The sample below is from 7 October: a cautious day for markets, rising inflation fears, AI as both the big hope and the big risk, Boots' £7bn sale and the fallout from Ireland's Budget 2027.",
+      "A custom briefing emailed to me every morning as a voice note, which I listen to on the way to work. It pulls live data on US and Swiss 10-year yields, SOFR, €STR, the main US, global and European indices, gold and EUR/USD, and sizes each move against the past year: quiet moves get one line, anything over 1.5 standard deviations gets an explanation. Then it covers what's priced for the next Fed and ECB decisions, any key data releases and the day's headlines. Claude writes the script and ElevenLabs voices it.",
+      "The sample below is from 10 October: Friday's closes, a December Fed hike creeping into the price, the ECB on hold, and Trump's Russian diesel deal.",
     ],
-    audio: { src: "/morning-brief-sample.mp3", label: "Sample briefing, 7 October 2026 (about 11 minutes)" },
+    audio: { src: "/morning-brief-sample.mp3", label: "Sample briefing, 10 October 2026 (about 5 minutes)" },
     tags: ["Python", "Claude API", "ElevenLabs", "GitHub Actions"],
     links: [{ label: "View on GitHub", href: "https://github.com/hugharcher5/morning-brief" }],
   },
