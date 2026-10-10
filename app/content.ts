@@ -183,9 +183,9 @@ export const tools: Feature[] = [
     kind: "Personal tool · Open source",
     paragraphs: [
       "A custom briefing emailed to me every morning as a voice note, which I listen to on the way to work. It pulls live data on US and Swiss 10-year yields, SOFR, €STR, the main US, global and European indices, gold and EUR/USD, and sizes each move against the past year: quiet moves get one line, anything over 1.5 standard deviations gets an explanation. Then it covers what's priced for the next Fed and ECB decisions, any key data releases and the day's headlines. Claude writes the script and ElevenLabs voices it.",
-      "The sample below is from 10 October: Friday's closes, a December Fed hike creeping into the price, the ECB on hold, and Trump's Russian diesel deal.",
+      "The sample below is from 10 October: Friday's closes, a December Fed hike creeping into the price, Ireland's EU budget proposal, Wednesday's public sector strike and an open-source tool that lets AI agents reverse-engineer any program.",
     ],
-    audio: { src: "/morning-brief-sample.mp3", label: "Sample briefing, 10 October 2026 (about 5 minutes)" },
+    audio: { src: "/morning-brief-sample.mp3", label: "Sample briefing, 10 October 2026 (about 11 minutes)" },
     tags: ["Python", "Claude API", "ElevenLabs", "GitHub Actions"],
     links: [{ label: "View on GitHub", href: "https://github.com/hugharcher5/morning-brief" }],
   },
