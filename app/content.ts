@@ -134,7 +134,10 @@ export const archerCapital: Feature = {
     "It pulls from SEC EDGAR, FMP and Yahoo. Genuine disagreement between sources widens the distribution's tails, while differences that are only definitions, like whether leases count as debt, don't, so accounting noise isn't mistaken for risk.",
   ],
   tags: ["Python", "NumPy", "SciPy", "Streamlit", "SEC EDGAR"],
-  links: [{ label: "View on GitHub", href: "https://github.com/hugharcher5/Monte-Carlo-DCF" }],
+  links: [
+    { label: "Open the app", href: "https://hugh-dcf-calculator.streamlit.app/" },
+    { label: "View on GitHub", href: "https://github.com/hugharcher5/Monte-Carlo-DCF" },
+  ],
 };
 
 export const doomscroll: Feature = {
