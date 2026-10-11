@@ -123,11 +123,11 @@ export const archerVentures: Feature = {
   links: [{ label: "Visit the site", href: "https://archer-ventures.vercel.app" }],
 };
 
-export const archerCapital: Feature = {
-  name: "Archer Capital: Monte Carlo DCF",
+export const monteCarloDcf: Feature = {
+  name: "Monte Carlo DCF",
   kind: "Valuation tool · Open source",
-  image: "/archer-capital.webp",
-  imageAlt: "Archer Capital valuing Microsoft: current price, P50 and P10 to P90 range, and the distribution of 10,000 simulated intrinsic values",
+  image: "/monte-carlo-dcf.webp",
+  imageAlt: "The Monte Carlo DCF valuing Microsoft: current price, P50 and P10 to P90 range, and the distribution of 10,000 simulated intrinsic values",
   paragraphs: [
     "Type in a ticker and it values the company 10,000 times instead of once, giving a full distribution of intrinsic value per share and the probability the stock is undervalued.",
     "Revenue growth, margins, WACC and terminal growth move together through a correlation matrix, applied with a copula so each keeps its own PERT distribution, with fatter t-distribution tails for volatile firms. Foreign-currency companies get an exchange rate driven by geometric Brownian motion in every simulation.",
