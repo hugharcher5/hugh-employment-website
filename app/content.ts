@@ -22,7 +22,8 @@ export const profile = {
     "I study Commerce at UCD and work as an Investment Fund Intern at IBM's pension fund in Dublin. I also build software: AI for hedge fund portfolio managers, valuation models, and my own products under Archer Ventures.",
   email: "archerh2005@gmail.com",
   linkedin: "https://www.linkedin.com/in/hugh-archer-9230a5297",
-  github: "",
+  github: "https://github.com/hugharcher5",
+  cv: "/Hugh-Archer-CV.pdf",
   contactNote: "Message me on LinkedIn. I'm always happy to jump on a call.",
 };
 
@@ -55,10 +56,51 @@ export const roles: Role[] = [
     points: ["Commission-based role; built a base of repeat luxury retail clients"],
   },
   {
-    title: "Exchange Semester & Rugby Coach",
-    org: "Singapore Management University · Singapore Irish Rugby Club",
+    title: "Rugby Coach",
+    org: "Singapore Irish Rugby Club · Singapore",
     when: "Jan 2026 – May 2026",
-    points: ["Coached boys' and girls' teams from U11 to U17 and a women's team"],
+    points: ["Coached boys' and girls' teams from U11 to U17 and a women's team during my exchange semester"],
+  },
+  {
+    title: "Transition Year Work Experience",
+    org: "Murex · Dublin",
+    when: "Nov 2021",
+    points: ["Spent time with the trading, risk and technology teams at the capital markets software firm"],
+  },
+];
+
+export type School = {
+  name: string;
+  detail: string;
+  where: string;
+  when: string;
+  points: string[];
+};
+
+export const education: School[] = [
+  {
+    name: "University College Dublin · Quinn School of Business",
+    detail: "Bachelor of Commerce, graduating May 2028",
+    where: "Dublin",
+    when: "Sep 2024 – May 2028",
+    points: [
+      "Cumulative GPA 3.8, First Class Honours",
+      "Coursework: Principles of Finance, Financial and Management Accounting, Data Analysis",
+    ],
+  },
+  {
+    name: "Singapore Management University",
+    detail: "Exchange semester (Quinn exchange programme)",
+    where: "Singapore",
+    when: "Jan 2026 – May 2026",
+    points: [],
+  },
+  {
+    name: "Wesley College Dublin",
+    detail: "Leaving Certificate: 601 points; Award for Academic Excellence",
+    where: "Dublin",
+    when: "Sep 2017 – May 2024",
+    points: [],
   },
 ];
 
@@ -129,15 +171,29 @@ export const monteCarloDcf: Feature = {
   image: "/monte-carlo-dcf.webp",
   imageAlt: "The Monte Carlo DCF valuing Microsoft: current price, P50 and P10 to P90 range, and the distribution of 10,000 simulated intrinsic values",
   paragraphs: [
-    "Type in a ticker and it values the company 10,000 times instead of once, giving a full distribution of intrinsic value per share and the probability the stock is undervalued.",
-    "Revenue growth, margins, WACC and terminal growth move together through a correlation matrix, applied with a copula so each keeps its own PERT distribution, with fatter t-distribution tails for volatile firms. Foreign-currency companies get an exchange rate driven by geometric Brownian motion in every simulation.",
-    "It pulls from SEC EDGAR, FMP and Yahoo. Genuine disagreement between sources widens the distribution's tails, while differences that are only definitions, like whether leases count as debt, don't, so accounting noise isn't mistaken for risk.",
+    "Type in a ticker and it values the company 10,000 times with different inputs. It shows the range of values, how many scenarios beat today's price, and the growth the price implies.",
+    "Growth and margins are pulled toward what similar US companies actually achieved, fitted on 16,000 company-years of SEC filings, and the inputs are linked by estimated correlations. Foreign companies are valued in their own currency and converted at today's rate.",
+    "It pulls from SEC EDGAR, FMP and Yahoo. Real disagreement between sources widens the range, while definition differences like whether leases count as debt don't. I backtested it against P/E, P/S and P/B on data that includes delisted companies.",
   ],
   tags: ["Python", "NumPy", "SciPy", "Streamlit", "SEC EDGAR"],
   links: [
     { label: "Open the app", href: "https://hugh-dcf-calculator.streamlit.app/" },
     { label: "View on GitHub", href: "https://github.com/hugharcher5/Monte-Carlo-DCF" },
   ],
+};
+
+export const skillifyTrading: Feature = {
+  name: "Skillify Trading",
+  kind: "Automated paper trading · Running daily",
+  image: "/skillify-trading.webp",
+  imageAlt: "Skillify Trading triggers page: live one-standard-deviation thresholds for the S&P 500, long Treasuries, USD/JPY, gold and oil",
+  paragraphs: [
+    "A forward test of the Skillify API on an Interactive Brokers paper account, running with no input from me. Every weekday at the London open, a scheduled job checks the market is open and the risk limits allow trading, then sends Skillify a snapshot of the portfolio and the market. Skillify names the trades it wants, and the system sizes them, checks each against the risk limits and places the orders.",
+    "Between sessions, a monitor checks the S&P 500, long-dated Treasuries, USD/JPY, gold and oil every 15 minutes. If any of them moves more than one standard deviation in a day, it wakes the system to reassess straight away. A drawdown kill switch stops new trades if losses pass a set limit, and every call, decision and order is logged to a dashboard.",
+    "The account limits what it can trade. It is a cash account, which IBKR will only upgrade to margin from age 21, so it can't short most stocks and ETFs. EU rules also block US-listed ETFs, so it trades their European (UCITS) versions instead.",
+  ],
+  tags: ["Python", "Interactive Brokers API", "Supabase", "GitHub Actions", "Streamlit"],
+  links: [{ label: "Open the dashboard", href: "https://skillify-trading-ibkr.streamlit.app/" }],
 };
 
 export const doomscroll: Feature = {

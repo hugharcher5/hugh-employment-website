@@ -1,22 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #fafaf8;
+  --bg: #f6f5f1;
   --surface: #ffffff;
-  --text: #16181c;
-  --muted: #5e6573;
-  --line: #e5e6e1;
+  --text: #121417;
+  --body: #33383f;
+  --muted: #5c626c;
+  --line: #dcdbd4;
   --accent: #0f5c4a;
-  --tag: #f2f3ef;
+  --tag: #ecebe5;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0f1113;
-    --surface: #16191c;
+    --bg: #0e1012;
+    --surface: #15181b;
     --text: #ecedea;
-    --muted: #9aa1ac;
-    --line: #2a2e33;
+    --body: #c6cad0;
+    --muted: #9399a3;
+    --line: #2b2f34;
     --accent: #5fc3a5;
     --tag: #1d2125;
   }
@@ -26,16 +28,19 @@
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --color-text: var(--text);
+  --color-body: var(--body);
   --color-muted: var(--muted);
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-tag: var(--tag);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-newsreader);
+  --font-mono: var(--font-jetbrains);
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
 }
 
 body {
@@ -43,10 +48,17 @@ body {
   color: var(--text);
 }
 
-a:focus-visible {
+a:focus-visible,
+button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .shot {
+    filter: brightness(0.9);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
