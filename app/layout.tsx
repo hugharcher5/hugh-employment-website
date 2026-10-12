@@ -12,7 +12,9 @@ const description =
 export const metadata: Metadata = {
   title: "Hugh Archer · Finance and AI · UCD Commerce",
   description,
-  openGraph: { title: "Hugh Archer", description, url: "https://hugharcher.vercel.app", type: "website" },
+  metadataBase: new URL("https://hugharcher.vercel.app"),
+  openGraph: { title: "Hugh Archer", description, url: "/", type: "website" },
+  twitter: { card: "summary_large_image", title: "Hugh Archer", description },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

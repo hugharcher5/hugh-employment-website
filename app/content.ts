@@ -133,23 +133,13 @@ export const skillify: Feature = {
   paragraphs: [
     "The customer console for Skillify, the AI tool for hedge fund portfolio managers I work on at Blackkite Ventures. I built its Supabase backend: accounts, Google sign-in, one-time verification codes for new sign-ups, issuing and storing API keys, and tracking each customer's credits.",
     "I also built the routing system behind the API, which runs on two LLMs. One picks which heuristics and skills a request needs and returns the answer through the customer's API key. The other checks and rates each response, flagging weak ones for review so we can improve Skillify's answers.",
-    "The setup instructions in the console are mine too, written so people who aren't technical can get started.",
+    "The setup instructions in the console are mine too, written so people who aren't technical can get started. I also worked on the frontend of Skillify's public website.",
   ],
   tags: ["Supabase", "PostgreSQL", "Google OAuth", "LLM routing", "Node.js"],
-  links: [{ label: "Open the console", href: "https://console.skillify.so" }],
-};
-
-export const skillifySite: Feature = {
-  name: "Skillify website",
-  kind: "Blackkite Ventures · Live",
-  image: "/skillify-site.webp",
-  imageAlt: "Skillify homepage: turning expert judgment into validated, reusable AI capability for investment workflows",
-  paragraphs: [
-    "Skillify's public website. It explains what Skillify does, turning expert judgment into validated, reusable AI capability for investment workflows, and lets investment teams book an intro call.",
-    "I worked on the frontend alongside the rest of the team, mainly improving the UI.",
+  links: [
+    { label: "Console (sign-in)", href: "https://console.skillify.so" },
+    { label: "Visit skillify.so", href: "https://skillify.so" },
   ],
-  tags: ["HTML", "CSS", "JavaScript"],
-  links: [{ label: "Visit skillify.so", href: "https://skillify.so" }],
 };
 
 export const archerVentures: Feature = {
@@ -169,11 +159,11 @@ export const monteCarloDcf: Feature = {
   name: "Monte Carlo DCF",
   kind: "Valuation tool · Open source",
   image: "/monte-carlo-dcf.webp",
-  imageAlt: "The Monte Carlo DCF valuing Microsoft: current price, P50 and P10 to P90 range, and the distribution of 10,000 simulated intrinsic values",
+  imageAlt: "The Monte Carlo DCF valuing Home Depot: price, median value, P10 to P90 range, the growth the price implies, and the distribution of 10,000 simulated values",
   paragraphs: [
     "Type in a ticker and it values the company 10,000 times with different inputs. It shows the range of values, how many scenarios beat today's price, and the growth the price implies.",
     "Growth and margins are pulled toward what similar US companies actually achieved, fitted on 16,000 company-years of SEC filings, and the inputs are linked by estimated correlations. Foreign companies are valued in their own currency and converted at today's rate.",
-    "It pulls from SEC EDGAR, FMP and Yahoo. Real disagreement between sources widens the range, while definition differences like whether leases count as debt don't. I backtested it against P/E, P/S and P/B on data that includes delisted companies.",
+    "It pulls from SEC EDGAR, FMP and Yahoo, and checks the sources against each other. Tested on 100 large stocks, the price fell inside its P10 to P90 range for 60% of them. In a 2015 to 2020 backtest on US small caps, including companies that later delisted, it picked stocks at least as well as P/E, P/S and P/B.",
   ],
   tags: ["Python", "NumPy", "SciPy", "Streamlit", "SEC EDGAR"],
   links: [
@@ -184,13 +174,13 @@ export const monteCarloDcf: Feature = {
 
 export const skillifyTrading: Feature = {
   name: "Skillify Trading",
-  kind: "Automated paper trading · Running daily",
+  kind: "Personal project · Trading every weekday",
   image: "/skillify-trading.webp",
   imageAlt: "Skillify Trading triggers page: live one-standard-deviation thresholds for the S&P 500, long Treasuries, USD/JPY, gold and oil",
   paragraphs: [
-    "A forward test of the Skillify API on an Interactive Brokers paper account, running with no input from me. Every weekday at the London open, a scheduled job checks the market is open and the risk limits allow trading, then sends Skillify a snapshot of the portfolio and the market. Skillify names the trades it wants, and the system sizes them, checks each against the risk limits and places the orders.",
-    "Between sessions, a monitor checks the S&P 500, long-dated Treasuries, USD/JPY, gold and oil every 15 minutes. If any of them moves more than one standard deviation in a day, it wakes the system to reassess straight away. A drawdown kill switch stops new trades if losses pass a set limit, and every call, decision and order is logged to a dashboard.",
-    "The account limits what it can trade. It is a cash account, which IBKR will only upgrade to margin from age 21, so it can't short most stocks and ETFs. EU rules also block US-listed ETFs, so it trades their European (UCITS) versions instead.",
+    "My own project, separate from my work at Blackkite: a test of whether Skillify's market calls make money when nobody steps in. It trades an Interactive Brokers paper account completely on its own. Every weekday at the London open, a scheduled job checks the market is open and the risk limits allow trading, sends Skillify a snapshot of the portfolio and the market, and places the trades Skillify asks for after sizing them and checking each against the limits.",
+    "Between sessions, a monitor checks the S&P 500, long-dated Treasuries, USD/JPY, gold and oil every 15 minutes, and wakes the system to reassess whenever one moves more than one standard deviation in a day. A drawdown kill switch stops new trades if losses pass a set limit, and every call, decision and order is logged to a dashboard.",
+    "The account limits what it can trade. It is a cash account, which IBKR only upgrades to margin from age 21, so it can't short most stocks and ETFs. EU rules also block US-listed ETFs, so it trades their European (UCITS) versions instead.",
   ],
   tags: ["Python", "Interactive Brokers API", "Supabase", "GitHub Actions", "Streamlit"],
   links: [{ label: "Open the dashboard", href: "https://skillify-trading-ibkr.streamlit.app/" }],
@@ -219,7 +209,10 @@ export const geograil: Feature = {
     "You can sign in with Google, add friends, climb the leaderboards and track your stats. It also lets misspellings through. I started it to teach myself web development and kept building on it.",
   ],
   tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "MapLibre"],
-  links: [{ label: "Play GeoGrail", href: "https://geograil.vercel.app" }],
+  links: [
+    { label: "Play GeoGrail", href: "https://geograil.vercel.app" },
+    { label: "View on GitHub", href: "https://github.com/hugharcher5/Flag-Guesser" },
+  ],
 };
 
 export const tools: Feature[] = [
@@ -231,7 +224,7 @@ export const tools: Feature[] = [
     imageHref: "/screen-capture-example.pdf",
     paragraphs: [
       "A Chrome extension I use every day, and a couple of friends use it too. One keyboard shortcut saves the whole page you're on as a PDF in your Downloads folder, ready to hand to an AI model. It's handy when I'm using AI to work through websites.",
-      "The example pictured took one step: I opened Wikipedia's Golf article and pressed Ctrl+Shift+C. The full 28-page PDF was in my Downloads folder straight away. Some sites print less cleanly, so it's worth checking the PDF.",
+      "The example pictured took one step: I opened Wikipedia's Golf article and pressed Ctrl+Shift+C. The full 28-page PDF was in my Downloads folder straight away.",
     ],
     tags: ["Chrome extension", "JavaScript"],
     links: [
@@ -243,11 +236,8 @@ export const tools: Feature[] = [
     name: "Morning Brief",
     kind: "Personal tool · Open source",
     paragraphs: [
-      "A custom briefing emailed to me every morning as a voice note, which I listen to on the way to work. It pulls live data on US and Swiss 10-year yields, SOFR, €STR, the main US, global and European indices, gold and EUR/USD, and sizes each move against the past year: quiet moves get one line, anything over 1.5 standard deviations gets an explanation. Then it covers what's priced for the next Fed and ECB decisions and any key data releases, followed by the news I've chosen to hear about: markets and business, the US, Europe, Ireland in more detail, and AI and new software. Claude writes the script and ElevenLabs voices it.",
-      "The sample below is from 10 October: Friday's closes, a December Fed hike creeping into the price, Ireland's EU budget proposal, Wednesday's public sector strike and an open-source tool that lets AI agents reverse-engineer any program.",
+      "A short audio briefing on markets and news, emailed to me each morning, which I listen to on the way to work. It covers rates, the major indices, gold and EUR/USD, explains any move bigger than 1.5 standard deviations of its one-year daily range, and says what's priced for the next Fed and ECB meetings, then the news I follow. Claude writes the script and ElevenLabs reads it.",
     ],
-    sources:
-      "Market data: CNBC, the New York Fed (SOFR), the ECB (€STR) and fed funds futures via Yahoo Finance. Data releases: BLS and BEA. News: CNBC, the FT, BBC, NPR, Politico Europe, Euronews, RTÉ, The Irish Times, the Irish Independent, TechCrunch, The Verge, Ars Technica, MIT Technology Review and Hacker News.",
     audio: { src: "/morning-brief-sample.mp3", label: "Sample briefing, 10 October 2026 (about 11 minutes)" },
     tags: ["Python", "Claude API", "ElevenLabs", "GitHub Actions"],
     links: [{ label: "View on GitHub", href: "https://github.com/hugharcher5/morning-brief" }],
@@ -255,22 +245,7 @@ export const tools: Feature[] = [
   {
     name: "Claude Code workflows",
     kind: "Personal kit · Open source",
-    paragraphs: [
-      "My own setup for Claude Code that I use across every project to get work done faster. Eleven always-on behaviours, built once and reused everywhere, plus a companion skill for Claude Desktop:",
-    ],
-    features: [
-      "75-word replies, enforced by a hook",
-      "Plan-first gate before any code edits",
-      "Reviewed memory compiler",
-      "Memory lint for links and secrets",
-      "Learns from my corrections",
-      "Sources shown only on request",
-      "Safe API key installer",
-      "UI/UX Pro Max design library",
-      "Humanizer for AI-sounding text",
-      "Courtroom mode: four sub-agents debate big decisions",
-      "Sonnet/Opus model routing",
-    ],
+    paragraphs: ["My personal Claude Code setup, reused across every project: hooks, memory and model routing."],
     tags: ["Claude Code", "Python", "Hooks", "Agents"],
     links: [{ label: "View on GitHub", href: "https://github.com/hugharcher5/claude-code-workflow" }],
   },
@@ -285,5 +260,4 @@ export const skills: { group: string; items: string[] }[] = [
     group: "Technical",
     items: ["Python (pandas, NumPy)", "SQL / PostgreSQL", "LLM APIs & agents", "Excel, Bloomberg"],
   },
-  { group: "Outside work", items: ["Rugby", "Chess", "Skiing", "Markets"] },
 ];

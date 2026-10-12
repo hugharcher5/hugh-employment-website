@@ -7,7 +7,6 @@ import {
   profile,
   roles,
   skillify,
-  skillifySite,
   skillifyTrading,
   skills,
   tools,
@@ -26,6 +25,17 @@ const newTab = <span className="sr-only"> (opens in a new tab)</span>;
 const arrow = (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
     <path d="M7 17L17 7M8 7h9v9" />
+  </svg>
+);
+
+const linkedinLogo = (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+  </svg>
+);
+const githubLogo = (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+    <path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57v-2c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3" />
   </svg>
 );
 
@@ -97,7 +107,7 @@ function Links({ f }: { f: Feature }) {
 /** Large card for the projects that matter most: screenshot beside the write-up. */
 function Featured({ f, flip = false }: { f: Feature; flip?: boolean }) {
   return (
-    <article className="grid items-start gap-6 md:grid-cols-[1.2fr_1fr] md:gap-9">
+    <article className={`grid items-start gap-6 md:gap-9 ${flip ? "md:grid-cols-[1fr_1.2fr]" : "md:grid-cols-[1.2fr_1fr]"}`}>
       {f.image && <Shot f={f} className={`md:sticky md:top-24 ${flip ? "md:order-2" : ""}`} />}
       <div className="flex flex-col gap-4">
         <p className="font-mono text-[0.72rem] tracking-[0.14em] text-accent uppercase">{f.kind}</p>
@@ -219,8 +229,8 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-2.5">
               <a className={btnPrimary} href={profile.cv} {...ext}>View my CV{arrow}{newTab}</a>
               <a className={btn} href={`mailto:${profile.email}`}>Email</a>
-              <a className={btn} href={profile.linkedin} {...ext}>LinkedIn{newTab}</a>
-              <a className={btn} href={profile.github} {...ext}>GitHub{newTab}</a>
+              <a className={btn} href={profile.linkedin} {...ext}>{linkedinLogo}LinkedIn{newTab}</a>
+              <a className={btn} href={profile.github} {...ext}>{githubLogo}GitHub{newTab}</a>
             </div>
           </div>
           <dl className="rounded-lg border border-line bg-surface">
@@ -243,23 +253,20 @@ export default function Home() {
           </Section>
 
           <Section id="work" n="03" title="At work" intro="Skillify is the AI tool for hedge fund portfolio managers I build at Blackkite Ventures.">
+            <Featured f={skillify} />
+          </Section>
+
+          <Section id="projects" n="04" title="Finance projects" intro="Trading and valuation systems I built in my own time.">
             <div className="flex flex-col gap-14">
-              <Featured f={skillify} />
-              <Featured f={skillifySite} flip />
+              <Featured f={skillifyTrading} />
+              <Featured f={monteCarloDcf} flip />
             </div>
           </Section>
 
-          <Section id="company" n="04" title="My company" intro="Archer Ventures Limited, the Irish company I set up to build and run my own products.">
+          <Section id="company" n="05" title="My company" intro="Archer Ventures Limited, the Irish company I set up to build and run my own products.">
             <div className="flex flex-col gap-14">
               <Featured f={archerVentures} />
               <Featured f={doomscroll} flip />
-            </div>
-          </Section>
-
-          <Section id="projects" n="05" title="Finance projects" intro="Valuation and trading systems I built in my own time.">
-            <div className="flex flex-col gap-14">
-              <Featured f={monteCarloDcf} />
-              <Featured f={skillifyTrading} flip />
             </div>
           </Section>
 
@@ -289,7 +296,7 @@ export default function Home() {
           <Section id="contact" n="08" title="Get in touch">
             <p className="max-w-[56ch] text-lg text-body">{profile.contactNote}</p>
             <div className="mt-7 flex flex-wrap gap-2.5">
-              <a className={btnPrimary} href={profile.linkedin} {...ext}>Message me on LinkedIn{newTab}</a>
+              <a className={btnPrimary} href={profile.linkedin} {...ext}>{linkedinLogo}Message me on LinkedIn{newTab}</a>
               <a className={btn} href={`mailto:${profile.email}`}>{profile.email}</a>
               <a className={btn} href={profile.cv} {...ext}>CV{newTab}</a>
             </div>
