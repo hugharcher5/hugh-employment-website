@@ -19,7 +19,7 @@ export const profile = {
   name: "Hugh Archer",
   headline: "Finance student building AI tools for investors.",
   intro:
-    "I study Commerce at UCD and work as an Investment Fund Intern at IBM's pension fund in Dublin. I also build software: AI for hedge fund portfolio managers, valuation models, and my own products under Archer Ventures.",
+    "I study Commerce at UCD and work as an Investment Fund Intern at IBM's pension fund in Dublin. I also build software: AI for hedge fund portfolio managers, valuation models, and my own products under Archer Ventures. I'm studying for the CFA Level I exam in May 2027.",
   email: "archerh2005@gmail.com",
   linkedin: "https://www.linkedin.com/in/hugh-archer-9230a5297",
   github: "https://github.com/hugharcher5",
@@ -259,5 +259,13 @@ export const skills: { group: string; items: string[] }[] = [
   {
     group: "Technical",
     items: ["Python (pandas, NumPy)", "SQL / PostgreSQL", "LLM APIs & agents", "Excel, Bloomberg"],
+  },
+  {
+    group: "Certifications",
+    items: [
+      "CFA Level I Candidate (May 2027)",
+      "Bloomberg Market Concepts (BMC)",
+      "IBM Python for Data Science, AI & Development",
+    ],
   },
 ];

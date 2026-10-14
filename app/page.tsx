@@ -278,7 +278,7 @@ export default function Home() {
             </div>
           </Section>
 
-          <Section id="skills" n="07" title="Skills">
+          <Section id="skills" n="07" title="Skills & certifications">
             <div className="flex flex-col gap-7">
               {skills.map((s) => (
                 <div key={s.group}>
